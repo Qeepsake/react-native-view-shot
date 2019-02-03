@@ -3,11 +3,11 @@ buildscript {
         root project is responsible for that. */
     if (rootProject.buildDir == project.buildDir) {
         repositories {
-            google()
+            maven { url 'https://maven.google.com/' }
             jcenter()
         }
         dependencies {
-            classpath 'com.android.tools.build:gradle:2.3.0'
+            classpath 'com.android.tools.build:gradle:2.2.3'
         }
     }
 }
@@ -16,7 +16,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion "28.0.3"
+    buildToolsVersion "26.0.2"
 
     defaultConfig {
         minSdkVersion 16
@@ -32,7 +32,7 @@ android {
 }
 
 repositories {
-    google()
+    maven { url 'https://maven.google.com/' }
     jcenter()
     mavenLocal()
     maven {
@@ -42,7 +42,6 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.android.support:support-v4:27.+'
-
-    api 'com.facebook.react:react-native:+'
+    compile 'com.android.support:support-v4:27.+'
+    compile 'com.facebook.react:react-native:+'
 }
